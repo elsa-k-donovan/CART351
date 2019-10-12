@@ -1,0 +1,84 @@
+* {
+
+  background: #98C4FF;
+
+}
+
+
+html {
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+body {
+
+  margin: 10%;
+}
+/* header styles */
+
+p {
+  color: white;
+}
+
+h1 {
+  color: white;
+}
+
+
+header{
+  background: #f4f9ff;
+  color: #98C4FF;
+  margin-left:60%;
+  margin-right:2%;
+  width: 30%;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+
+
+section{
+  background: #f4f9ff;
+  /*padding: 5px;*/
+  width: 30%;
+  margin-left:60%;
+  margin-right:2%;
+}
+
+
+section p {
+  background: #f4f9ff;
+  color: #98C4FF;
+}
+
+/* section styles */
+
+section article {
+
+  margin-bottom:2%;
+  padding:2%;
+}
+
+section p {
+  font-size:1em;
+  font-weight: bold;
+}
+
+section ul {
+  margin-top: 0;
+  font-size:1em;
+}
+
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: -5px;
+  margin-bottom: 10px;
+}
+
+#getData{
+  background:#ffd398;
+  width:10%;
+}
+
+#inputValue{
+  background: white;
+}
