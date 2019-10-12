@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 3</title>
+    <script src="jquery/jquery-3.4.1.js"></script>
+       <link rel="stylesheet" type="text/css" href="css/exercise3.css">
+    <script>
+    $(document).ready(function(){
+      let header= $('header');
+      let section=$('section');
+      let loaded = false
+      let inputVal = "";
+      let intVal = 4;
+
+      $("#getData").click(function(){
+          inputVal = $("#inputValue").val()
+          if(inputVal === "friday" || inputVal === "Friday"){
+            intVal = 0;
+          }
+          else if (inputVal === "saturday" || inputVal === "Saturday"){
+            intVal = 1;
+          }
+          else if(inputVal === "sunday" || inputVal === "Sunday"){
+            intVal = 2;
+          }
+          else if(inputVal === "monday" || inputVal === "Monday"){
+            intVal = 3;
+          }
+          else {
+            intVal = 4;
+          }
+
+          console.log("The user chose: " + inputVal)
+
+
+          $.getJSON("eveningStroll.json",function(data){
+            console.log(data);
+            // populateHeader(data);
+            showDays(data,intVal);
+          })
+          .fail(function(){
+            console.log("error");
+          })
+
+
+      // function populateHeader(data){
+      //   if(loaded === false){
+      //     let head = $("<h1>")
+      //     $(head).text(data.Label);
+      //     $(head).appendTo(header);
+      //
+      //     let head2 = $("<h2>");
+      //     $(head2).text(data.Sublabel);
+      //     $(head2).appendTo(header);
+      //   }
+      // }
+
+      function showDays(data, value){
+
+        if (value === 4) {
+          $("<p>").text("There is no data for that input.");
+        }
+        else{
+
+        let day = data['StrollInfo'];
+        let p1 = $("<p>");
+        let p2 = $("<p>");
+        let p3 = $("<p>");
+        let p4 = $("<p>");
+        let p5 = $("<p>");
+        let p6 = $("<p>");
+        let p7 = $("<p>");
+
+        if(loaded ===false){
+
+          $(p1).text(day[value].day).attr("id","1para");
+          $(p2).text("Date: " + day[value].date).attr("id","2para");
+          $(p3).text("Steps: " + day[value].steps).attr("id","3para");
+          $(p4).text("Start Time: " + day[value].startTime).attr("id","4para");
+          $(p5).text("End Time: " + day[value].endTime).attr("id","5para");
+          $(p6).text("Duration: " + day[value].duration).attr("id","6para");
+          $(p7).text("Distance: " + day[value].distance).attr("id","7para");
+
+
+          $(p1).appendTo(section);
+          $(p2).appendTo(section);
+          $(p3).appendTo(section);
+          $(p4).appendTo(section);
+          $(p5).appendTo(section);
+          $(p6).appendTo(section);
+          $(p7).appendTo(section);
+
+
+          loaded = true;
+        }else{
+          $("#1para").text(day[value].day);
+          $("#2para").text("Date: " + day[value].date);
+          $("#3para").text("Steps: " + day[value].steps);
+          $("#4para").text("Start Time: " + day[value].startTime);
+          $("#5para").text("End Time: " + day[value].endTime);
+          $("#6para").text("Duration: " + day[value].duration);
+          $("#7para").text("Distance: " + day[value].distance);
+
+        }
+
+        }
+      }
+
+      })
+
+    })
+
+    </script>
+  </head>
+  <body>
+    <h1> Evening Walk </h1>
+
+    <p> Search for a day of the week (friday to monday) to see the corresponding statistics.</p>
+
+    <input type="text" id="inputValue" value=""/>
+    <input type="button" id="getData" value="Search" />
+
+        <header>
+
+        </header>
+
+        <section>
+
+        </section>
+
+
+  </body
+</html>

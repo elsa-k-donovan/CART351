@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise3</title>
+    <script src="jquery/jquery-3.4.1.js"></script>
+       <link rel="stylesheet" type="text/css" href="css/exercise3.css">
+    <script>
+    $(document).ready(function(){
+      let header= $('header');
+      let section=$('section');
+      let loaded = false
+      let inputVal = "";
+      let intVal = 0;
+
+      $("#getData").click(function(){
+
+        console.log("clicked");
+
+          inputVal = $("#inputValue").val()
+          if(inputVal === "friday" || inputVal === "Friday"){
+            intVal = 0;
+          }
+          if (inputVal === "saturday" || inputVal === "Saturday"){
+            intVal = 1;
+          }
+          if(inputVal === "sunday" || inputVal === "Sunday"){
+            intVal = 2;
+          }
+          if(inputVal === "monday" || inputVal === "Monday"){
+            intVal = 3;
+          }
+
+          console.log("The user chose: " + inputVal)
+
+
+          $.getJSON("eveningStroll.json",function(data){
+
+          console.log(data);
+
+            populateHeader(data);
+            showDays(data,intVal);
+
+          })
+          .fail(function(){
+            console.log("error");
+          })
+
+
+      function populateHeader(data){
+        if(loaded === false){
+          let header = $("<h1>")
+          $(header).text(data.Label);
+          $(header).appendTo(header);
+        }
+      }
+
+      function showDays(data, val){
+        let day = data['StrollInfo'];
+
+        console.log(val);
+
+        let title = $("<h1>");
+        let p2 = $("<p>");
+        let p3 = $("<p>");
+        let p4 = $("<p>");
+        let p5 = $("<p>");
+        let p6 = $("<p>");
+        let p7 = $("<p>");
+
+        if(loaded ===false){
+
+          //retrieve data from JSON and assign to variable, and assign html ID
+          $(title).text(day[val].day).attr("id","head");
+          $(p2).text("Date: " + day[val].date).attr("id","par2");
+          $(p3).text(day[val].steps).attr("id","par3");
+          $(p4).text(day[val].startTime).attr("id","par4");
+          $(p5).text(day[val].endTime).attr("id","par5");
+          $(p6).text(day[val].duration).attr("id","par6");
+          $(p7).text(day[val].distance).attr("id","par7");
+
+          console.log(day[val].duration);
+
+          //add variable to HTML
+          $(title).appendTo(header);
+          $(p2).appendTo(section);
+          $(p3).appendTo(section);
+          $(p4).appendTo(section);
+          $(p5).appendTo(section);
+          $(p6).appendTo(section);
+          $(p7).appendTo(section);
+
+          //so that it knows to clear when new submission
+          loaded = true;
+
+        }else{
+
+            console.log(day[val].duration);
+
+
+            //retrieve data from JSON and assign to variable, and assign html ID
+            $("head").text(day[val].day);
+            $("par2").text("Date: " + day[val].date);
+            $("par3").text(day[val].steps);
+            $("par4").text(day[val].startTime);
+            $("par5").text(day[val].endTime);
+            $("par6").text(day[val].duration);
+            $("par7").text(day[val].distance);
+
+
+        }
+
+      }
+
+      })
+
+    })
+
+    </script>
+  </head>
+  <body>
+    <h1> Evening Walk </h1>
+
+    <p> Search for a day of the week to see the corresponding statistics.</p>
+
+    <input type="text" id="inputValue" value=""/>
+    <input type="button" id="getData" value="Search" />
+        <header>
+
+        </header>
+
+        <section>
+
+        </section>
+
+
+  </body>
+</html>

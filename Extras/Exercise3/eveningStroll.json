@@ -1,0 +1,57 @@
+{
+	"Label": "Evening Strolls",
+	"SubLabel":"This data is loaded from a json file::",
+	"StrollInfo": [
+	
+	{
+	
+	"day" : "Friday",
+	"date" : "10/04/19",
+	"steps"	: "3837",
+	"startTime" : "18:15",
+	"endTime": "18:50",
+	"duration" : "35 minutes",
+	"distance": "3.4 km"
+	
+	},
+	
+		{
+	
+	"day" : "Saturday",
+	"date" : "10/05/19",
+	"steps"	: "4014",
+	"startTime" : "18:25",
+	"endTime": "19:05",
+	"duration" : "40 minutes",
+	"distance": "3.6 km"
+	
+	},
+	
+	
+		{
+	
+	"day" : "Sunday",
+	"date" : "10/06/19",
+	"steps"	: "5640",
+	"startTime" : "18:05",
+	"endTime": "19:17",
+	"duration" : "1 hour 12 minutes",
+	"distance": "4.1 km"
+	
+	},
+	
+		{
+	
+	"day" : "Monday",
+	"date" : "10/07/19",
+	"steps"	: "3944",
+	"startTime" : "20:24",
+	"endTime": "21:00",
+	"duration" : "36 minutes",
+	"distance": "3.5 km"
+	
+	}
+	
+	]
+
+}

@@ -1,0 +1,41 @@
+* {
+  margin: 10;
+  padding: 10;
+  box-sizing:border-box;
+  font-family: 'Avenir Next', 'Nunito', sans-serif;
+  text-decoration: none;
+}
+
+
+<<<<<<< HEAD
+
+body {
+  padding: 40px;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: #000;
+  border-radius: 50%;
+  display: inline-block;
+  justify-content: center;
+}
+
+
+h1 {
+  font-size: 32px;
+}
+
+=======
+>>>>>>> 6a257025f78137d36af66b080e7f55e0e28ee2c5
+section {
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
