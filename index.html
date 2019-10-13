@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="css/stylesheet.css">
 	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 	<LINK REL="SHORTCUT ICON" STYLE="text-decoration:none" href="img/favicon.png">
-	<script src="js/responsive.js" type="text/javascript"></script>
+	<script src="jquery/jquery-3.4.1.js"></script>
 </head>
 
 <body>
@@ -48,7 +48,7 @@
 
 
 <!--FIX THIS-->
-	<footer>
+	<footer id = "footer">
 		<section>
 			<a href="mailto:elsa.donovan@concordia.ca"> <img src="img/test3.jpg" class = "icon"</a>
 			<a href = "https://www.linkedin.com/in/elsa-k-donovan/"><img src="img/test2.jpg" class = "icon"> </a>
@@ -64,20 +64,35 @@
 
 window.onload = function(){
 
-  let handleClick = function(event){
-		 console.log("Clicked on Leaf");
+	let leafClicked = false;
 
-		//document.getElementById('nav').style.background = "#997299";
-		document.getElementById('main_background').style.background = "#dac7da";
 
-		//not documentbyID
-		document.getElementByName('nav a').style.color = "#b6dbb9";
-		document.getElementByName('footer').style.color = "#b6dbb9";
 
-  };
+		  let handleClick = function(event){
+				 console.log("Clicked on Leaf. Boolean is :" + leafClicked);
 
-  let leaf = document.getElementById('leaf');
-  leaf.addEventListener('click', handleClick);
+				if(leafClicked === false){
+				//document.getElementById('nav').style.background = "#997299";
+				document.getElementById('main_background').style.background = "#dac7da";
+			//	document.getElementById('nav').style.color = "#dac7da";
+				//document.getElementById('footer').style.color = "#dac7da";
+				}
+				else {
+					document.getElementById('main_background').style.background = "#b6dbb9";
+					//document.getElementById('nav').style.color = "#b6dbb9";
+				//	document.getElementById('footer').style.color = "#b6dbb9";
+				}
+
+				leafClicked = !leafClicked;
+				console.log("Boolean changed to: " + leafClicked);
+
+		  };
+
+			let leaf = document.getElementById('leaf');
+			leaf.addEventListener('click', handleClick);
+
+
+
 
 } //on load
 

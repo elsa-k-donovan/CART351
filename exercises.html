@@ -89,18 +89,35 @@
 
 window.onload = function(){
 
-  let handleClick = function(event){
-		 console.log("Clicked on Leaf");
+	let leafClicked = false;
 
-		//document.getElementById('nav').style.background = "#997299";
-		document.getElementById('main_background').style.background = "#c8a2c8";
-		document.getElementById('nav').style.color = "#b6dbb9";
-		document.getElementById('footer').style.color = "#b6dbb9";
 
-  };
 
-  let leaf = document.getElementById('leaf');
-  leaf.addEventListener('click', handleClick);
+		  let handleClick = function(event){
+				 console.log("Clicked on Leaf. Boolean is :" + leafClicked);
+
+				if(leafClicked === false){
+				//document.getElementById('nav').style.background = "#997299";
+				document.getElementById('main_background').style.background = "#dac7da";
+			//	document.getElementById('nav').style.color = "#dac7da";
+				//document.getElementById('footer').style.color = "#dac7da";
+				}
+				else {
+					document.getElementById('main_background').style.background = "#b6dbb9";
+					//document.getElementById('nav').style.color = "#b6dbb9";
+				//	document.getElementById('footer').style.color = "#b6dbb9";
+				}
+
+				leafClicked = !leafClicked;
+				console.log("Boolean changed to: " + leafClicked);
+
+		  };
+
+			let leaf = document.getElementById('leaf');
+			leaf.addEventListener('click', handleClick);
+
+
+
 
 } //on load
 
