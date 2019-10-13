@@ -1,3 +1,4 @@
 #ignore extra files folder
 extras/
 Extras/
+.atom-live-server.json
