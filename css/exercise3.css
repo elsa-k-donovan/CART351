@@ -1,6 +1,7 @@
 * {
 
   background: #98C4FF;
+  /*background: linear-gradient(rgba(0,0,0,1) 0%, rgba(112,11,86,1) 35%, rgba(145,32,105,1) 44%, rgba(88,13,124,1) 66%, rgba(18,1,33,1) 87%);*/
 
 }
 
@@ -13,6 +14,7 @@ body {
 
   margin: 10%;
 }
+
 /* header styles */
 
 p {

@@ -64,13 +64,17 @@ nav a:hover {
 }
 
 
-p a{
+#els {
+	color: white;
+}
+
+.exButton {
 	color:#fff;
 	border-style: solid;
 	padding: 9px;
 }
 
-p a:hover {
+.exButton:hover {
 	background-color: #fff;
 	color: #b6dbb9;
 }

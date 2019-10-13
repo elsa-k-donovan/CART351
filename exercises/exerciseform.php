@@ -117,7 +117,7 @@ fieldset {
    and within the message you must include the person's name and email).*/
 
 
-   echo("<div id='response'><h3>".$formatted." ".$tempName."</h3>");
+   echo("<div id='response'><h3>".$formatted."&deg; ".$tempName."</h3>");
    echo("<p> Hi ".$name.", you will receive an email at ".$email." with more information concerning temperature conversion as soon as our servers are up and running again.</p></div>");
 
 
