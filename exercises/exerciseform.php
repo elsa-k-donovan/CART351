@@ -102,11 +102,11 @@ fieldset {
  */
 
  if ($tempName == "Celsius"){
-   $convertedTemp = (5/9)*($tempNum - 32);
+   $convertedTemp = (5/9)*$tempNum - 32;
  }
 
  if ($tempName == "Fahrenheit"){
-   $convertedTemp = (9/5)*($tempNum + 32);
+   $convertedTemp = (9/5)*$tempNum + 32;
  }
 
 
