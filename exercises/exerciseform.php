@@ -102,11 +102,11 @@ fieldset {
  */
 
  if ($tempName == "Celsius"){
-   $convertedTemp = (5/9)*$tempNum - 32;
+   $convertedTemp = (5/9)*($tempNum - 32);
  }
 
  if ($tempName == "Fahrenheit"){
-   $convertedTemp = (9/5)*$tempNum + 32;
+   $convertedTemp = ((9/5)*$tempNum) + 32;
  }
 
 
@@ -116,7 +116,7 @@ fieldset {
 
 
    echo("<div id='response'><h3>".$convertedTemp." ".$tempName."</h3>");
-   echo("<p> Dear ".$name.", you will receive an email at ".$email." with the desired temperature.</p></div>");
+   echo("<p> Hi ".$name.", you will receive an email at ".$email." with more information concerning temperature conversion as soon as our servers are up and running again.</p></div>");
 
 
  }
