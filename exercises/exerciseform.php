@@ -3,7 +3,7 @@
  <!DOCTYPE html>
  <html>
  <head>
- <title>Fahrenheit/Celsius Converter</title>
+ <title>Fahrenheit-Celsius Converter</title>
  <!--set some style properties::: -->
 <style>
 
@@ -57,7 +57,7 @@ fieldset {
 
  <form action "exerciseform.php" method="post">
  <!-- group the related elements in a form -->
- <h2> Fahrenheit/Celsius Converter </h2>
+ <h2> Fahrenheit-Celsius Converter </h2>
  <fieldset>
   <p><label>Name: </label><input type="text" size="40" maxlength = "40" name = "a_name" required> </p>
  <p><label>Email: </label> <input type ="email" size="40" maxlength = "40" name = 'a_email' required/></p>
@@ -106,8 +106,10 @@ fieldset {
  }
 
  if ($tempName == "Fahrenheit"){
-   $convertedTemp = ((9/5)*$tempNum) + 32;
+   $convertedTemp = (((9/5)*$tempNum) + 32).toFixed(2);
  }
+
+ $formatted = number_format($convertedTemp);
 
 
    /* Step 3: using the echo() - display a custom message i.e. Dear ... to notify the user that
@@ -115,7 +117,7 @@ fieldset {
    and within the message you must include the person's name and email).*/
 
 
-   echo("<div id='response'><h3>".$convertedTemp." ".$tempName."</h3>");
+   echo("<div id='response'><h3>".$formatted." ".$tempName."</h3>");
    echo("<p> Hi ".$name.", you will receive an email at ".$email." with more information concerning temperature conversion as soon as our servers are up and running again.</p></div>");
 
 
