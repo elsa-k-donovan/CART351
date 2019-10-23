@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- For Mobile Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Field Guide</title>
+    <link rel="stylesheet" href="css/guide.css">
+    <script src = "jquery/jquery-3.4.1.js"></script>
+    <!-- <script type = "text/javascript" src ="js/custShape.js" ></script> -->
+  </head>
+  <body>
+
+    <!--Loading Bar before page load -->
+    <div class="loader-wrapper">
+      <span class="loader">
+          <span class ="loader-inner"></span>
+      </span>
+
+    </div>
+
+
+
+<nav>
+  <h2><a href = "#">INDEX</a></h2><br>
+  <h2><a href="#">MAP</a></h2>
+</nav>
+
+
+
+  </body>
+
+  <!--JQUERY-->
+  <script>
+    $(document).ready(function(){
+
+      for (let i = 0; i < 20000; i++){
+        console.log(i);
+      }
+
+      $(".loader-wrapper").fadeOut("slow");
+
+
+    });
+  </script>
+
+</html>
